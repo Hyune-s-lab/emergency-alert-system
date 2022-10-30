@@ -4,5 +4,5 @@ import com.hyunec.domain.merchant.entity.MerchantEntity
 
 interface MerchantRepository {
 
-    fun save(merchantEntity: MerchantEntity): MerchantEntity?
+    fun save(merchantEntity: MerchantEntity): MerchantEntity
 }

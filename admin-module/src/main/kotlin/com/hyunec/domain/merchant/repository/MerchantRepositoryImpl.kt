@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository
 class MerchantRepositoryImpl(
     val merchantJpaDao: MerchantJpaDao
 ) : MerchantRepository {
-    override fun save(merchantEntity: MerchantEntity): MerchantEntity? {
+    override fun save(merchantEntity: MerchantEntity): MerchantEntity {
         return merchantJpaDao.save(merchantEntity)
     }
 }
