@@ -1,7 +1,7 @@
 package com.hyunec.web
 
 import com.hyunec.domain.merchant.service.MerchantRegisterService
-import com.hyunec.web.request.RegisterMerchantRequest
+import com.hyunec.web.request.MerchantRegisterRequest
 import io.swagger.v3.oas.annotations.Operation
 import io.swagger.v3.oas.annotations.tags.Tag
 import org.springframework.web.bind.annotation.PostMapping
@@ -14,7 +14,7 @@ class MerchantController(val merchantRegisterService: MerchantRegisterService) {
 
     @Operation(summary = "상점 등록")
     @PostMapping("/merchant")
-    fun registerMerchant(@RequestBody request: RegisterMerchantRequest) {
+    fun register(@RequestBody request: MerchantRegisterRequest) {
         merchantRegisterService.register(request.mid, request.webhookKey)
     }
 }
