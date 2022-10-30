@@ -1,0 +1,26 @@
+spring:
+  profiles: local
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      default_batch_fetch_size: 1000
+    open-in-view: false
+    show-sql: true
+
+  datasource:
+    hikari:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      jdbc-url: ${JDBC_URL:jdbc:mysql://host.docker.internal:3306/emergency-alert-system}
+      username: ${JDBC_USERNAME:root}
+      password: ${JDBC_PASSWORD:root}
+      maximum-pool-size: 10
+      minimum-idle: 3
+      connection-test-query: SELECT 1
+      data-source-properties:
+        zeroDateTimeBehavior: convertToNull
+
+  logging:
+    level:
+      root: debug

@@ -1,0 +1,16 @@
+version: "3"
+services:
+  emergency-alert-system_mysql:
+    image: mysql:8.0.30
+    environment:
+      MYSQL_DATABASE: emergency-alert-system
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+  emergency-alert-system:
+    image: emergency-alert-system
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - emergency-alert-system_mysql
