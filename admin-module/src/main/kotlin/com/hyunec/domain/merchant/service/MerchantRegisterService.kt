@@ -1,9 +1,9 @@
-package com.hyunec.domain
+package com.hyunec.domain.merchant.service
 
 import org.springframework.stereotype.Service
 
 @Service
-class MerchantService {
+class MerchantRegisterService {
 
     fun register(mid: String, webhookKey: String) {
         // TODO merchant 등록
