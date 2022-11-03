@@ -5,4 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository
 import java.util.*
 
 interface MerchantJpaDao : JpaRepository<MerchantEntity, UUID> {
+
+    fun findByMid(mid: String): MerchantEntity?
 }

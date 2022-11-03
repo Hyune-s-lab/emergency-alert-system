@@ -4,5 +4,7 @@ import com.hyunec.domain.merchant.entity.MerchantEntity
 
 interface MerchantRepository {
 
+    fun findAll(): List<MerchantEntity>
+    fun findByMid(mid: String): MerchantEntity?
     fun save(merchantEntity: MerchantEntity): MerchantEntity
 }

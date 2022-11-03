@@ -7,6 +7,14 @@ import org.springframework.stereotype.Repository
 class MerchantRepositoryImpl(
     val merchantJpaDao: MerchantJpaDao
 ) : MerchantRepository {
+    override fun findAll(): List<MerchantEntity> {
+        return merchantJpaDao.findAll()
+    }
+
+    override fun findByMid(mid: String): MerchantEntity? {
+        return merchantJpaDao.findByMid(mid)
+    }
+
     override fun save(merchantEntity: MerchantEntity): MerchantEntity {
         return merchantJpaDao.save(merchantEntity)
     }
