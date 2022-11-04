@@ -1,6 +1,7 @@
 package com.hyunec.domain.merchant.service
 
 import com.hyunec.domain.merchant.repository.MerchantRepository
+import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.core.annotation.DisplayName
 import io.kotest.core.spec.style.BehaviorSpec
 import io.kotest.extensions.spring.SpringExtension
@@ -41,6 +42,12 @@ internal class MerchantRegisterServiceTest : BehaviorSpec() {
                     check(findMerchant != null)
                     findMerchant.mid shouldBe mid
                     findMerchant.slackWebhookKey shouldBe key
+                }
+            }
+
+            When("같은 mid 로 상점 생성") {
+                shouldThrow<IllegalStateException> {
+                    merchantRegisterService.register(mid, key)
                 }
             }
         }

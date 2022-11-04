@@ -10,12 +10,12 @@ class MerchantRegisterService(val merchantRepository: MerchantRepository) {
 
     @Transactional
     fun register(mid: String, webhookKey: String): Long {
-        val save = merchantRepository.save(
+        check(!merchantRepository.existsByMid(mid))
+        return merchantRepository.save(
             MerchantEntity(
                 mid = mid,
                 slackWebhookKey = webhookKey
             )
-        )
-        return save.merchantId!!
+        ).merchantId!!
     }
 }

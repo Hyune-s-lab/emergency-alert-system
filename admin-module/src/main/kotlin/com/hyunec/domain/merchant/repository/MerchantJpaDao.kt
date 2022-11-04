@@ -7,4 +7,5 @@ import java.util.*
 interface MerchantJpaDao : JpaRepository<MerchantEntity, UUID> {
 
     fun findByMid(mid: String): MerchantEntity?
+    fun existsByMid(mid: String): Boolean
 }
