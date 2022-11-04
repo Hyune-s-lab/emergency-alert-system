@@ -30,6 +30,7 @@ subprojects {
 
     val kotestVersion = "5.4.2"
     val kotestExtVersion = "1.1.2"
+    val fixtureMonkeyVersion = "0.4.2"
 
     dependencies {
         implementation("org.springframework.boot:spring-boot-starter")
@@ -49,6 +50,10 @@ subprojects {
         testImplementation("io.kotest:kotest-assertions-core:$kotestVersion")
         testImplementation("io.kotest:kotest-property:$kotestVersion")
         implementation("io.kotest.extensions:kotest-extensions-spring:$kotestExtVersion")
+
+        // fixture-monkey
+        implementation("com.navercorp.fixturemonkey:fixture-monkey-jackson:$fixtureMonkeyVersion")
+        implementation("com.navercorp.fixturemonkey:fixture-monkey-kotlin:$fixtureMonkeyVersion")
     }
 
     tasks.withType<KotlinCompile> {
