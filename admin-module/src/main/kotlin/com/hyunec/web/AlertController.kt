@@ -1,6 +1,6 @@
 package com.hyunec.web
 
-import com.hyunec.domain.AlertService
+import com.hyunec.domain.alert.service.AlertService
 import com.hyunec.web.request.AlertSendRequest
 import io.swagger.v3.oas.annotations.Operation
 import io.swagger.v3.oas.annotations.tags.Tag

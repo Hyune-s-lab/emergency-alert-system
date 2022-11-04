@@ -1,4 +1,4 @@
-package com.hyunec.domain
+package com.hyunec.domain.alert.service
 
 import com.hyunec.constant.ProviderType
 import com.hyunec.sender.IncomingWebhookSender
