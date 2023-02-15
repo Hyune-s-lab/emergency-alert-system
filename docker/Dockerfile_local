@@ -1,4 +1,4 @@
-FROM openjdk:17-jdk-slim-buster
+FROM openjdk:11-jdk-slim-buster
 ARG JAR_FILE=/admin-module/build/libs/*.jar
 COPY ${JAR_FILE} app.jar
 
